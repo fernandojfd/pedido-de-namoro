@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Pedido </title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Biblioteca jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <p> Quer namorar comigo? </p> <!-- Paragrafo com "Quer namorar comigo?"-->
+    <button id="change"> Não </button>
+    <button class="hidden" id="move"> Não </button>
+</body>
+
+<script>
+    $("#change").click(function () {         // esse escript vai alterar o texto de não pra sim:
+        $("#change").html("Sim");
+        $("#move").show();                   // Move vai dar um show:
+    });
+
+    $("#move").hover(function () {           // Sempre que passar o mouse por cima ele chama a função change:
+        change();
+    });
+
+    function change() {                                           // função change vai gerar dois numeros randomicos 
+        var i = Math.floor(Math.random() * 500) + 1;               
+        var j = Math.floor(Math.random() * 100) + 1;              
+        $("#move").css({ top: j + 'px', left: i + 'px' })         // os dois numeros gerados passara para o move atráves do css
+    }
+</script>
+
+</html>
